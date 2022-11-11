@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import Clock from './components/Clock';
+import Calculator from './components/Calculator/Calculator';
 import './App.css'
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
       </header>
 
     {/* Calculator */}
+    <Calculator />
+
     </>
   );
 }
