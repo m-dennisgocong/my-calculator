@@ -1,84 +1,87 @@
-export const numbers = [
+export const buttons = [
     {
-        "number" : 0,
-        "name" : "zero", 
+        'type' : 'number',
+        'name' : 'zero',
+        'symbol' : 0,
     },
     {
-        "number" : 1,
-        "name" : "one", 
+        'type' : 'number',
+        'name' : 'one',
+        'symbol' : 1,
     },
     {
-        "number" : 2,
-        "name" : "two", 
+        'type' : 'number',
+        'name' : 'two',
+        'symbol' : 2,
     },
     {
-        "number" : 3,
-        "name" : "three", 
+        'type' : 'number',
+        'name' : 'three',
+        'symbol' : 3,
     },
     {
-        "number" : 4,
-        "name" : "four", 
+        'type' : 'number',
+        'name' : 'four',
+        'symbol' : 4,
     },
     {
-        "number" : 5,
-        "name" : "five", 
+        'type' : 'number',
+        'name' : 'five',
+        'symbol' : 5,
     },
     {
-        "number" : 6,
-        "name" : "six", 
+        'type' : 'number',
+        'name' : 'six',
+        'symbol' : 6,
     },
     {
-        "number" : 7,
-        "name" : "seven", 
+        'type' : 'number',
+        'name' : 'seven',
+        'symbol' : 7,
     },
     {
-        "number" : 8,
-        "name" : "eight", 
+        'type' : 'number',
+        'name' : 'eight',
+        'symbol' : 8,
     },
     {
-        "number" : 9,
-        "name" : "nine", 
-    }
-]; 
-
-export const operators = [
-    {
-        "operator" : '+',
-        "name" : "add"
+        'type' : 'number',
+        'name' : 'nine',
+        'symbol' : 9,
     },
     {
-        "operator" : "-",
-        "name" : "subtract"
+        'type' : 'equation',
+        'name' : 'equals',
+        'symbol' : '=',
     },
     {
-        "operator" : '÷',
-        "name" : "divide" 
+        'type' : 'operator',
+        'name' : 'add',
+        'symbol' : '+',
     },
     {
-        "operator" : 'x',
-        "name" : "multiply"
-    }
-];
-
-export const otherFunction = [
-    {
-        "symbol" : "AC",
-        "name" : "allClear"
+        'type' : 'operator',
+        'name' : 'subtract',
+        'symbol' : '-',
     },
     {
-        "symbol" : "CE",
-        "name" : "clearEntry"
+        'type' : 'operator',
+        'name' : 'multiply',
+        'symbol' : 'x',
     },
     {
-        "symbol" : ".",
-        "name" : "decimal"
+        'type' : 'operator',
+        'name' : 'divide',
+        'symbol' : '÷',
     },
     {
-        "symbol" : "=",
-        "name" : "equal"
+        'type' : 'remove',
+        'name' : 'clear',
+        'symbol' : 'AC',
     },
     {
-        "symbol" : "±",
-        "name" : "toggleSign"
-    }
-];
+        'type' : 'point',
+        'name' : 'decimal',
+        'symbol' : '.',
+    },
+]
