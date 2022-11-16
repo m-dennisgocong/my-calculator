@@ -72,7 +72,7 @@ export const buttons = [
     {
         'type' : 'operator',
         'name' : 'divide',
-        'symbol' : '÷',
+        'symbol' : '/',
     },
     {
         'type' : 'remove',
