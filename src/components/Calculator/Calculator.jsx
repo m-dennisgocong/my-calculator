@@ -89,6 +89,26 @@ const Calculator = () => {
         }
     }
 
+    const handleDecimal = () => {
+      if (tally.currentVal.indexOf('.') == -1 && tally.currentVal.indexOf('Limit') == -1) {
+        setTally((updateTally)=>({...updateTally, lastClicked: updateTally.lastClicked == 'CE' ? 'CE' : 'decimal'})) 
+        if (tally.currentVal.length > 21) {
+          maxDigitWarning();
+        } else if (tally.lastClicked == 'evaluated' || endsWithOperator.test(tally.formula) || tally.currentVal == '0' && tally.formula === '' || /-$/.test(tally.formula)) {
+          setTally((updateTally)=>({...updateTally,
+            currentVal: '0.',
+            formula: updateTally.lastClicked == 'evaluated' ? '0.' : updateTally.formula + '0.'
+          }));
+        } else if (tally.formula.match(/(\(?\d+\.?\d*)$/)[0].indexOf('.') > -1) { 
+        } else {
+          setTally((updateTally)=>({...updateTally,
+            currentVal: updateTally.formula.match(/(-?\d+\.?\d*)$/)[0] + '.',
+            formula: updateTally.formula + '.',
+          }))
+        }
+      }
+    }
+
     const handleEvaluate = () => {
         if (!lockOperators(tally.formula, tally.currentVal)) {
           let expression = tally.formula;
@@ -114,7 +134,8 @@ const Calculator = () => {
     <>
         <Formula formula={tally.formula} />
         <Screen currentVal={tally.currentVal} />
-        <Buttons handleNumbers={handleNumbers} handleOperators={handleOperators} allClear={allClear} handleEvaluate={handleEvaluate}/>
+        <Buttons handleNumbers={handleNumbers} handleOperators={handleOperators} allClear={allClear} handleEvaluate={handleEvaluate} 
+        handleDecimal={handleDecimal} />
     </>
     );
 }

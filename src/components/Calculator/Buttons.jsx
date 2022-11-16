@@ -1,6 +1,6 @@
 import { buttons } from "../data/data";
 
-const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate}) => {
+const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate, handleDecimal}) => {
 
     return(
         <>
@@ -14,6 +14,8 @@ const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate}) => 
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={allClear}>{buttons.symbol}</button>
                     case 'equation':
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={handleEvaluate}>{buttons.symbol}</button>
+                    case 'point':
+                        return <button key={index} id={buttons.name} value={buttons.symbol} onClick={handleDecimal}>{buttons.symbol}</button>
                     default:
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={()=> console.log(buttons.name+ 'under construction')}>{buttons.symbol}</button>
                 }
