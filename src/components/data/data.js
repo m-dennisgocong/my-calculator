@@ -80,8 +80,18 @@ export const buttons = [
         'symbol' : 'AC',
     },
     {
+        'type' : 'remove',
+        'name' : 'clearEntry',
+        'symbol' : 'CE',
+    },
+    {
         'type' : 'point',
         'name' : 'decimal',
         'symbol' : '.',
     },
+    {
+        'type' : 'toggleSign',
+        'name' : 'positive-negative',
+        'symbol' : '±',
+    }
 ]
