@@ -1,9 +1,10 @@
 import { buttons } from "../data/data";
+import './Buttons.css';  
 
 const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate, handleDecimal}) => {
 
     return(
-        <>
+        <section id="buttons-container">
             {buttons.map((buttons, index) => {
                 switch(buttons.type){
                     case 'number': 
@@ -17,10 +18,10 @@ const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate, hand
                     case 'point':
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={handleDecimal}>{buttons.symbol}</button>
                     default:
-                        return <button key={index} id={buttons.name} value={buttons.symbol} onClick={()=> console.log(buttons.name+ 'under construction')}>{buttons.symbol}</button>
+                        return <button key={index} id={buttons.name} value={buttons.symbol}>{buttons.symbol}</button>
                 }
             })}
-        </>
+        </section>
     );
 }
 export default Buttons;
