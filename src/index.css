@@ -12,3 +12,14 @@ body{
     display: grid;
     place-items: center;
 }
+
+#root{
+    height: 75vh;
+    width: 50vh;
+    display: flex;
+    color: #fff;
+    border-radius: 1.4rem;
+    background-color: #222;
+    flex-direction: column;
+    justify-content: space-between;
+}
