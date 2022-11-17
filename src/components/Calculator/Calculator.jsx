@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Buttons from "./Buttons";
+import './Calculator.css';
 
 const Formula = ({formula}) => {
-    return <div id="formula">{formula}</div>
+  return <div id="formula">{formula}</div>
 }
 
 const Screen = ({currentVal}) => {
-    return <div id="display">{currentVal}</div>
+  return <div id="display">{currentVal}</div>
 }
 
 const Calculator = () => {
@@ -25,7 +26,7 @@ const Calculator = () => {
     const [tally, setTally] = useState(initialState);
 
     const maxDigitWarning = () => {
-        setTally({...tally, prevVal: tally.currentVal,currentVal: 'Digit Limit Reached'});
+        setTally({...tally, prevVal: tally.currentVal,currentVal: 'Max Limit!!'});
         setTimeout(()=> setTally(updateTally => ({...updateTally, currentVal: updateTally.prevVal})), 1200);
     }
 
@@ -37,10 +38,10 @@ const Calculator = () => {
                 maxDigitWarning();
             }
             else if(tally.lastClicked == 'CE' && tally.formula !== ''){
-                setTally({...tally, currentVal :!endsWithOperator.test(tally.formula) ?
-                    tally.formula.match(/(-?\d+\.?\d*)$/)[0] + e.target.value : e.target.value,
-                    formula: tally.formula += e.target.value 
-                });
+                setTally(updateTally=>({...updateTally, currentVal :!endsWithOperator.test(updateTally.formula) ?
+                  updateTally.formula.match(/(-?\d+\.?\d*)$/)[0] + e.target.value : e.target.value,
+                    formula: updateTally.formula += e.target.value 
+                }));
             }
             else if(tally.formula.indexOf('=') != -1){
                 setTally({...tally, currentVal: e.target.value, formula: e.target.value != '0' ? 
@@ -52,7 +53,7 @@ const Calculator = () => {
                     e.target.value : tally.currentVal + e.target.value,
                     formula: tally.currentVal == '0' && e.target.value == '0' ?
                     tally.formula : /([^.0-9]0)$/.test(tally.formula) ?
-                    tally.formula.slice(0, -1) + e.target.value : tally.formula + e.target.value,
+                    tally.formula.slice(0, -1) + e.target.value : tally.formula + e.target.value
                 })
             }
         }
@@ -119,7 +120,7 @@ const Calculator = () => {
           let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
           setTally({...tally,
             currentVal: answer.toString(),
-            formula: expression.replace(/\*/g, '⋅').replace(/-/g, '-') + '=' + answer,
+            formula: expression.replace(/\*/g, '.').replace(/-/g, '-') + '=' + answer,
             prevVal: answer,
             currentSign: answer[0] == '-' ? 'neg' : 'pos',
             lastClicked: 'evaluated'
@@ -131,9 +132,11 @@ const Calculator = () => {
         setTally(initialState);
     }
     return(
-    <>
-        <Formula formula={tally.formula} />
-        <Screen currentVal={tally.currentVal} />
+    <>  
+        <section id="screen">
+          <Formula formula={tally.formula} />
+          <Screen currentVal={tally.currentVal} />
+        </section>
         <Buttons handleNumbers={handleNumbers} handleOperators={handleOperators} allClear={allClear} handleEvaluate={handleEvaluate} 
         handleDecimal={handleDecimal} />
     </>
