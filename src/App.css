@@ -3,35 +3,37 @@ header{
     align-items: center;
     grid-template-columns: 5fr 1fr 1fr;
     width: 100%;
-    padding: .6em 1.3em .5em;
+    padding: .5em 1.3em .5em;
 }
 .switch-theme{
     position: relative;
-    height: 1.2rem;
-    width: 2.4rem;
+    height: 1rem;
+    width: 1.9rem;
     justify-self: end;
-    background-color: #333;
+    background-color: rgb(58, 58, 58);
     border-radius: 1.5em;
     cursor: pointer;
+    user-select: none;
 }
 .circle{
-    height: 1rem;
-    width: 1rem;
+    height: .9rem;
+    width: .9rem;
     background-color: #fff;
     border-radius: 2rem;
     position: absolute;
     top: .9px;
-    left: 4px;
+    left: 2px;
     cursor: pointer;
+    user-select: none;
 }
 
 #github-logo{
     justify-self: end;
-    /* font-size: 1.4rem; */
 }
 
 time{
     position: relative;
-    /* font-size: 1.3rem; */
+    font-size: 1rem;
     top: 2px;
+    user-select: none;
 }
