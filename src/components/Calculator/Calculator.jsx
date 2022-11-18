@@ -33,7 +33,7 @@ const Calculator = () => {
     const handleNumbers = (e) => {
         if(tally.currentVal.indexOf('Limit') == -1){
             setTally({...tally, lastClicked: 'num'});
-            if(tally.currentVal.length > 21){
+            if(tally.currentVal.length > 16){
                 console.log(tally.currentVal.length);
                 maxDigitWarning();
             }
