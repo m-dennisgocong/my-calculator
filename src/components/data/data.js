@@ -75,23 +75,13 @@ export const buttons = [
         'symbol' : '/',
     },
     {
-        'type' : 'remove',
+        'type' : 'AllClear',
         'name' : 'clear',
         'symbol' : 'AC',
-    },
-    {
-        'type' : 'remove',
-        'name' : 'clearEntry',
-        'symbol' : 'CE',
     },
     {
         'type' : 'point',
         'name' : 'decimal',
         'symbol' : '.',
-    },
-    {
-        'type' : 'toggleSign',
-        'name' : 'positive-negative',
-        'symbol' : '±',
     }
 ]
