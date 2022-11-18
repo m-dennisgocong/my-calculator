@@ -1,23 +1,21 @@
 #screen{
     display: flex;
     flex-direction: column;
-    /* justify-content: end; */
+    justify-content: flex-end;
     gap: .5em;
-    /* align-items: flex-end; */
-    padding: 4em 1em 1em;
+    padding: 2em 1em 0em;
     text-align: right;
 }
 
 #screen #formula{
-    height: 25px;
+    height: 28px;
     width: 100%;
-    overflow-x: scroll;
+    overflow: auto;
     font-size: 1.25rem;
-    padding: 0 .5em;
 }
 #screen #display{
-    height: 25px;
+    /* height: px; */
     width: 100%;
-    font-size: 1.5rem;
-    padding: 0 .5em;
+    font-size: 2rem;
+    overflow: auto;
 } 
