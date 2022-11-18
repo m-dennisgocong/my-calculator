@@ -11,7 +11,7 @@ const Buttons = ({handleNumbers, handleOperators, allClear, handleEvaluate, hand
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={(e) => handleNumbers(e)}>{buttons.symbol}</button>
                     case 'operator':
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={(e) => handleOperators(e)}>{buttons.symbol}</button>
-                    case 'remove': // clear all
+                    case 'AllClear': // clear all
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={allClear}>{buttons.symbol}</button>
                     case 'equation':
                         return <button key={index} id={buttons.name} value={buttons.symbol} onClick={handleEvaluate}>{buttons.symbol}</button>
