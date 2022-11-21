@@ -66,27 +66,27 @@ const Calculator = () => {
     const handleOperators = (e) => {
         if (!lockOperators(tally.formula, tally.currentVal)) {
           if (tally.formula.lastIndexOf('(') > tally.formula.lastIndexOf(')')) {
-            setTally({ ...tally,
-              formula: tally.formula + ')' + e.target.value,
-              prevVal: tally.formula + ')'
-            });
+            setTally(updateTally=>({ ...updateTally,
+              formula: updateTally.formula + ')' + e.target.value,
+              prevVal: updateTally.formula + ')'
+            }));
           } else if (tally.formula.indexOf('=') != -1) {
-            setTally({...tally,
-              formula: tally.prevVal + e.target.value
-            }); 
+            setTally(updateTally=>({...updateTally,
+              formula: updateTally.prevVal + e.target.value
+            })); 
           } else {
-            setTally({...tally, 
-              prevVal: !isOperator.test(tally.currentVal) ?
-                tally.formula : tally.prevVal,
-              formula: !isOperator.test(tally.currentVal) ?
-                tally.formula += e.target.value : tally.prevVal += e.target.value
-            });
+            setTally(updateTally=>({...updateTally, 
+              prevVal: !isOperator.test(updateTally.currentVal) ?
+              updateTally.formula : updateTally.prevVal,
+              formula: !isOperator.test(updateTally.currentVal) ?
+              updateTally.formula += e.target.value : updateTally.prevVal += e.target.value
+            }));
           } // operator defaults:
-          setTally({...tally,
+          setTally(updateTally=>({...updateTally,
             currentSign: 'pos',
             currentVal: e.target.value,
             lastClicked: 'operator'
-          });
+          }));
         }
     }
 
