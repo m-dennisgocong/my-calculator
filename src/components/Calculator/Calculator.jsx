@@ -32,9 +32,8 @@ const Calculator = () => {
 
     const handleNumbers = (e) => {
         if(tally.currentVal.indexOf('Limit') == -1){
-            setTally({...tally, lastClicked: 'num'});
+            setTally(updateTally=>({...updateTally, lastClicked: 'num'}));
             if(tally.currentVal.length > 16){
-                console.log(tally.currentVal.length);
                 maxDigitWarning();
             }
             else if(tally.lastClicked == 'CE' && tally.formula !== ''){
@@ -49,12 +48,12 @@ const Calculator = () => {
                 });
             }
             else{
-                setTally({...tally, currentVal: tally.currentVal == '0' || isOperator.test(tally.currentVal) ? 
-                    e.target.value : tally.currentVal + e.target.value,
-                    formula: tally.currentVal == '0' && e.target.value == '0' ?
-                    tally.formula : /([^.0-9]0)$/.test(tally.formula) ?
-                    tally.formula.slice(0, -1) + e.target.value : tally.formula + e.target.value
-                })
+                setTally(updateTally=>({...updateTally, currentVal: updateTally.currentVal == '0' || isOperator.test(updateTally.currentVal) ? 
+                    e.target.value : updateTally.currentVal + e.target.value,
+                    formula: updateTally.currentVal == '0' && e.target.value == '0' ?
+                    updateTally.formula : /([^.0-9]0)$/.test(updateTally.formula) ?
+                    updateTally.formula.slice(0, -1) + e.target.value : updateTally.formula + e.target.value
+                }))
             }
         }
     }
@@ -118,13 +117,13 @@ const Calculator = () => {
           expression = expression.lastIndexOf('(') > expression.lastIndexOf(')') ?
             expression + ')' : expression;
           let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
-          setTally({...tally,
+          setTally(updateTally=>({...updateTally,
             currentVal: answer.toString(),
             formula: expression.replace(/\*/g, '.').replace(/-/g, '-') + '=' + answer,
             prevVal: answer,
             currentSign: answer[0] == '-' ? 'neg' : 'pos',
             lastClicked: 'evaluated'
-          });
+          }));
         }
     }
 
