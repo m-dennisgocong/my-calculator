@@ -1,6 +1,7 @@
 header{
     display: grid;
     align-items: center;
+    justify-content: center;
     grid-template-columns: 5fr 1fr 1fr;
     width: 100%;
     padding: .5em 1.3em .5em;
@@ -30,6 +31,10 @@ header{
 
 #github-logo{
     justify-self: end;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    position: relative;
+    top: 3px;
 }
 
 time{
