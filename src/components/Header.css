@@ -35,6 +35,7 @@ header{
     font-size: 1.1rem;
     position: relative;
     top: 3px;
+    transition: color .3s;
 }
 
 time{
