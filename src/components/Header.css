@@ -22,7 +22,7 @@ header{
     background-color: var(--toggle-circle);
     border-radius: 2rem;
     position: absolute;
-    top: .8px;
+    top: .9px;
     left: 1.5px;
     cursor: pointer;
     user-select: none;
