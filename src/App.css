@@ -52,44 +52,7 @@
     background-color: var(--bg-primary); 
     flex-direction: column;
     justify-content: space-between;
+    transition: color .3s, background-color .3s;
 }
 
-header{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 5fr 1fr 1fr;
-    width: 100%;
-    padding: .5em 1.3em .5em;
-}
-.switch-theme{
-    position: relative;
-    height: 1rem;
-    width: 1.9rem;
-    justify-self: end;
-    background-color: var(--toggle-switch);
-    border-radius: 1.5em;
-    cursor: pointer;
-    user-select: none;
-}
-.circle{
-    height: .9rem;
-    width: .9rem;
-    background-color: var(--toggle-circle);
-    border-radius: 2rem;
-    position: absolute;
-    top: .8px;
-    left: .5px;
-    cursor: pointer;
-    user-select: none;
-}
 
-#github-logo{
-    justify-self: end;
-}
-
-time{
-    position: relative;
-    font-size: 1rem;
-    top: 2px;
-    user-select: none;
-}
