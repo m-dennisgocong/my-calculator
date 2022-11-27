@@ -20,7 +20,7 @@ const Header = () => {
             <div className="switch-theme" onClick={handleChangeTheme}>
                 <div style={!slide ? {transform : 'translateX(95%)'} : null} className='circle' onClick={handleChangeTheme}></div>
             </div>
-            <a href="#" id='github-logo'><FaGithub /></a>
+            <a href="https://github.com/m-dennisgocong/my-calculator" target="_blank" id='github-logo'><FaGithub /></a>
         </header>
     );
 }
