@@ -14,8 +14,8 @@
     font-size: 1.25rem;
 }
 #screen #display{
-    /* height: px; */
     width: 100%;
     font-size: 2rem;
     overflow: auto;
+    font-weight: bold;
 } 
