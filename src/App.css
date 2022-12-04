@@ -44,8 +44,10 @@
 }
 
 .App{
-    height: 85vh;
-    width: 50vh;
+    height: 75vmax;
+    width: 98vmin;
+    max-height: 560px;
+    max-width: 390px;
     display: flex;
     color: var(--text-color);
     border-radius: 1.4rem;
