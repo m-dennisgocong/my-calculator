@@ -7,6 +7,7 @@
     border-radius: 1rem;
     background-color: var(--buttons-wrapper-primary);
     width: 100%;
+    height: 60vmax;
     transition: background-color .3s;
 
     /* constant color value for operator and equal sign */
