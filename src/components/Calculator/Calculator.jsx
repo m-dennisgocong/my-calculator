@@ -119,7 +119,7 @@ const Calculator = () => {
           let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
           setTally(updateTally=>({...updateTally,
             currentVal: answer.toString(),
-            formula: expression.replace(/\*/g, '.').replace(/-/g, '-') + '=' + answer,
+            formula: expression.replace(/\*/g, '⋅').replace(/-/g, '-') + '=' + answer,
             prevVal: answer,
             currentSign: answer[0] == '-' ? 'neg' : 'pos',
             lastClicked: 'evaluated'
