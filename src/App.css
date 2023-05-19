@@ -57,4 +57,20 @@
     transition: color .3s, background-color .3s;
 }
 
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+footer a{
+    
+    color: rgb(123, 194, 212);
+}
 

@@ -12,6 +12,9 @@ function App() {
     <div className={`App ${theme}`}>
       <Header/>
       <Calculator />
+      <footer>
+        Created by <a href="https://github.com/m-dennisgocong">Dennis Goc-ong</a>
+      </footer>
     </div>
   );
 }
